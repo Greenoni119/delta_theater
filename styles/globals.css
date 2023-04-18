@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: gray;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+@media only screen and (max-width:637px) {
+  .seat{
+    height: 12px;
+    width: 2rem;
+  }
+}
+
+
+@media only screen and (max-width:615px) {
+  .seat{
+    height: 10px;
+    width: 1.5rem;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .seat{
+    height: 12px;
+    width: 1rem;
+  }
+}
