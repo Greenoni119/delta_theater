@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import MovieTimes from '../components/MovieTimes';
 import Image from 'next/image';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Nav from '@/components/Nav';
+
+
 const movies = [
   {
     title: 'Transformers',
@@ -78,27 +84,114 @@ const Movie = () => {
     setSelectedMovie(movie);
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className=''>
-      <h2>Select a time for {selectedMovie ? selectedMovie.title : 'a movie'}: </h2>
+    <div className='bg-zinc-700 text-red-400'>
       {selectedMovie ? (
         <MovieTimes movie={selectedMovie} />
         ) : (
           <div className=''>
-        <ul className='grid grid-cols-4 gap-5'>
-          {movies.map((movie, index ) => (
-            <li key={index}>
+<div className='header-banner '>
+<div className='title pb-7 text-red-400'>
+<h2 className='text-4xl'>Delta Theater</h2>
+<h3 className='text-2xl'>Brentwood ca</h3>
+</div>
+</div>
+<Nav/>
+
+        <div className='pt-5'>
+            <h1 className='text-2xl'>Out Now</h1>
+        <ul className=''>
+          <Slider {...settings}>
+          {movies.slice(0,5).map((movie, index ) => (
+            <li key={index} className='text-center'>
               <button onClick={() => handleMovieClick(movie)}>
-                {movie.title}
-              <Image src={movie.image} width={350} height={350} alt="image not working" />
+                
+              <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl' />
               </button>
             </li>
           ))}
-        </ul>
+       </Slider> 
+       </ul>
+</div>
+
+<div className='pt-10'>
+  <h1 className='text-2xl'>New Releases </h1>
+       <ul className=''>
+  <Slider {...settings}>
+  {movies.slice(0,5).map((movie, index ) => (
+    <li key={index} className='text-center'>
+      <button onClick={() => handleMovieClick(movie)}>
+        
+      <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl' />
+      </button>
+    </li>
+  ))}
+</Slider> 
+</ul>
+</div>
+
+<div className='pt-10'>
+  <h1 className='text-2xl'>Comming Soon </h1>
+       <ul className=''>
+  <Slider {...settings}>
+  {movies.slice(0,7).map((movie, index ) => (
+    <li key={index} className='text-center'>
+      <button onClick={() => handleMovieClick(movie)}>
+        
+      <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl'/>
+      </button>
+    </li>
+  ))}
+</Slider> 
+</ul>
+</div>
         </div>
+
       )}
       <br />
-      <Link href="/"><span>Back to home ()</span></Link>
+
+     
+ <Link href="/"><span>Back to home ()</span></Link>
+
+
+
+
     </div>
   );
 };

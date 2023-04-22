@@ -24,8 +24,20 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-
+.header-banner{
+  background: url('../public/banner2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow:  -10px -10px 10px 20px black;
+ 
+  
+}
+.title{
+  opacity:;
+}
+.slick-dots li.slick-active button:before{
+  color:aqua
+}
 
 @media only screen and (max-width:637px) {
   .seat{

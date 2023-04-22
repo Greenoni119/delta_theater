@@ -36,28 +36,14 @@ const SeatSelector = ({ title, time , image}) => {
 
 <div className="flex justify-center m-2 mx-auto max-w-screen-sm min-w-screen-sm">
 
+
+
+
 <div className="">
   
-  {Array.from({ length: 3 }, (_, row) => (
-    Array.from({ length: 10 }, (_, col) => (
-      <button
-        key={`${row}-${col}`}
-        onClick={() => handleSeatClick(`${String.fromCharCode(65 + row)}${col + 1}`)}
-        className={` seat h-3 w-4 rounded-t text-xs rotate-12 m-1 sm:h-6 sm:w-8  ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 1}`) ? 'bg-red-500' : 'bg-gray-300'}`}
-        disabled={selectedSeats.length >= 10 && !selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 1}`)}
-      >
-        {/*{String.fromCharCode(65 + row)}{col + 1}*/}
-      </button>
-    ))
-  ))}
-</div>
-
-
-<div className="p-1.5">
-  
   <div className="">
-  {Array.from({ length: 9 }, (_, row) => (
-    Array.from({ length:10 }, (_, col) => (
+  {Array.from({ length: 13 }, (_, row) => (
+    Array.from({ length:11 }, (_, col) => (
       <button
         key={`${row}-${col}`}
         onClick={() => handleSeatClick(`${String.fromCharCode(65 + row)}${col + 11}`)}
@@ -71,21 +57,7 @@ const SeatSelector = ({ title, time , image}) => {
   </div>
 </div>
 
-<div className="">
- 
-  {Array.from({ length: 3 }, (_, row) => (
-    Array.from({ length: 10 }, (_, col) => (
-      <button
-        key={`${row}-${col}`}
-        onClick={() => handleSeatClick(`${String.fromCharCode(80 - row)}${col + 1}`)}
-        className={`seat h-3 w-4 rounded-t text-xs -rotate-12 m-1 sm:h-6 sm:w-8 ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(80 - row)}${col + 1}`) ? 'bg-red-500' : 'bg-gray-300'}`}
-        disabled={selectedSeats.length >= 10 && !selectedSeats.some((s) => s.seat === `${String.fromCharCode(80 - row)}${col + 1}`)}
-      >
-         {/*{String.fromCharCode(80 - row)}{col + 1}*/}
-      </button>
-    ))
-  ))}
-</div>
+
 
 </div>
 <SeatInformation/>
@@ -115,8 +87,5 @@ export default SeatSelector;
 
 
 
-{/* 
-
-*/}
 
 
