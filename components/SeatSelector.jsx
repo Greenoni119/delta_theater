@@ -29,16 +29,12 @@ const SeatSelector = ({ title, time , image}) => {
 
   return (
     <div className='max-w-screen-sm mx-auto'>
-<div className="w-full bg-red-500 rounded-t-full mt-5 mb-2 p-1 max-w-screen-md mx-auto">
+<div className="w-full bg-red-400 rounded-t-full mt-5 mb-2 p-0.5 max-w-screen-md mx-auto">
   </div>
-  <h2 className="text-white font-bold text-center">Screen</h2>
+  <h2 className="text-red-400 font-bold text-center">Screen</h2>
 
 
 <div className="flex justify-center m-2 mx-auto max-w-screen-sm min-w-screen-sm">
-
-
-
-
 <div className="">
   
   <div className="">
@@ -47,30 +43,40 @@ const SeatSelector = ({ title, time , image}) => {
       <button
         key={`${row}-${col}`}
         onClick={() => handleSeatClick(`${String.fromCharCode(65 + row)}${col + 11}`)}
-        className={`seat h-3 w-4 rounded-t text-xs m-1 sm:h-6 sm:w-8 ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`) ? 'bg-red-500' : 'bg-gray-300'}`}
+        className={`seat h-3 w-4 rounded-t text-xs m-1 sm:h-6 sm:w-8 ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`) ? 'bg-teal-300' : 'bg-gray-400'}`}
         disabled={selectedSeats.length >= 10 && !selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`)}
       >
-        {/* {String.fromCharCode(65 + row)}{col + 11}*/}
       </button>
     ))
   ))}
   </div>
 </div>
-
-
-
 </div>
+
 <SeatInformation/>
+
       {selectedSeats.length > 0 && (
-        <div className='pt-6' >
-          <p>Selected seats: {selectedSeats.map((s) => s.seat).join(', ')}</p>
-          <p>Total price: ${totalPrice.toFixed(2)}</p>
-          <Link href={checkoutLink}>
-            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-              Checkout
+        <div>
+        <div className=' bg-zinc-600 flex justify-center gap-10 pt-3 rounded-xl m-3 pb-3' >
+          <div className='ml-3'>
+            <h1 className='text-red-400'>Seats:</h1>
+          <p className='text-teal-400 text-sm'> {selectedSeats.map((s) => s.seat).join(', ')}</p>
+          <h1 className='text-red-400'>Price:</h1>
+          <p className='text-teal-400 text-sm'> ${totalPrice.toFixed(2)}</p>
+          </div>
+    
+       <div className='py-5 mr-3'>
+        <Link href={checkoutLink}>
+            <button className="  text-teal-400 font-bold py-2 px-4 rounded border border-red-400 hover:shadow-xl shadow-red-400">
+              Go To <br/> Checkout
             </button>
           </Link>
-        </div>
+       </div>
+
+ </div>
+
+</div>
+
       )}
 
 
