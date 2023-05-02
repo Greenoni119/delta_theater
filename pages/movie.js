@@ -329,7 +329,7 @@ const Movie = () => {
   
 
   return (
-    <div className='bg-zinc-700 text-red-400 pb-20 h-screen'>
+    <div className='bg-zinc-700 text-red-400 pb-20 '>
       {selectedMovie ? (
         
         
