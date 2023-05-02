@@ -18,7 +18,7 @@ const movies = [
     image:"/wick.jpg",
   },
   {
-    title: 'Evil Dead Rizing',
+    title: 'Evil Dead Rize',
     times: ['11:00 AM', '2:00 PM', '5:00 PM'],
     rating:'10/10',
     duration:'1h 30m',
@@ -303,7 +303,7 @@ const Movie = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          
+          dots:false,
         },
       },
       {
@@ -312,6 +312,7 @@ const Movie = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          dots:false,
         },
       },
       {
@@ -319,6 +320,7 @@ const Movie = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots:false,
         },
       },
     ],
@@ -327,7 +329,7 @@ const Movie = () => {
   
 
   return (
-    <div className='bg-zinc-700 text-red-400 pb-20'>
+    <div className='bg-zinc-700 text-red-400 pb-20 h-screen'>
       {selectedMovie ? (
         
         

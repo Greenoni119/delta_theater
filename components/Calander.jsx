@@ -10,7 +10,7 @@ export class Calander extends React.Component {
     }
     render() {
         return (
-            <div className=' ml-4 text-sm'>
+            <div className=' ml-4 text-lg'>
                 {this.state.date}
             </div>
         );
@@ -18,10 +18,3 @@ export class Calander extends React.Component {
 }
 export default Calander
 
-
-{/*
-date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-date = (today.getDate() + 1) + '-' + (today.getMonth() + 1) + '-' +  today.getFullYear();
-
-*/}

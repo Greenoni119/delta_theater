@@ -25,7 +25,7 @@ const MovieTimes = ({ movie }) => {
 
       <Calander />
         {movie.times.map((time, index) => (
-          <li className='hover:text-teal-400 pb-3 ml-4 text-gray-400 text-lg pt-3' key={index}>
+          <li className='hover:text-teal-400 pb-3 ml-4 text-gray-400 text-3xl pt-5' key={index}>
             <Link href={`/seat?title=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(time)}&image=${encodeURIComponent(movie.image)}`}>
               <span onClick={() => handleTimeClick(time)}>{time}</span>
             </Link>

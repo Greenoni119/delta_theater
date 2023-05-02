@@ -28,7 +28,7 @@ const SeatSelector = ({ title, time , image}) => {
   const checkoutLink = `/Checkout?title=${encodeURIComponent(title)}&time=${encodeURIComponent(time)}&seats=${encodeURIComponent(selectedSeats.map((s) => s.seat).join(','))}&totalPrice=${encodeURIComponent(totalPrice.toFixed(2))}&image=${encodeURIComponent(image)}`;
 
   return (
-    <div className='max-w-screen-sm mx-auto'>
+    <div className='max-w-screen-sm mx-auto ml-3 mr-3'>
 <div className="w-full bg-red-400 rounded-t-full mt-5 mb-2 p-0.5 max-w-screen-md mx-auto">
   </div>
   <h2 className="text-red-400 font-bold text-center">Screen</h2>
@@ -56,7 +56,7 @@ const SeatSelector = ({ title, time , image}) => {
 <SeatInformation/>
 
       {selectedSeats.length > 0 && (
-        <div>
+        <div className='w-full'>
         <div className=' bg-zinc-600 flex justify-center gap-10 pt-3 rounded-xl m-3 pb-3' >
           <div className='ml-3'>
             <h1 className='text-red-400'>Seats:</h1>

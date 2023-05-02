@@ -14,7 +14,7 @@ const Seat = () => {
       <Head>
         <title>Seat Selection: {title}</title>
       </Head>
-      <div className='flex items-center justify-center gap-3'>
+      <div className='flex items-center justify-center gap-3 ml-4 mr-4'>
       <Image src={image} width={100} height={50} alt="Movie Poster" className=' mt-3 rounded-xl' />
     
     <div className='text-3xl text-teal-400'> 
