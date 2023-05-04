@@ -7,7 +7,8 @@ const Contact = () => {
     backgroundImage: 'url(bg_night.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '100vh',
+    height: '100%',
+    width:'100%',
   };
 
   const contentStyle = {
