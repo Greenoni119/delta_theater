@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +8,13 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: gray;
+  background-color: #3f3f46;
+}
+
+@layer base {
+  html {
+    font-family: 'Oswald', sans-serif; 
+  }
 }
 
 body {
@@ -32,9 +39,7 @@ a {
  
   
 }
-.title{
-  opacity:;
-}
+
 .slick-dots li.slick-active button:before{
   color:aqua
 }

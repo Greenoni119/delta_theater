@@ -325,11 +325,36 @@ const Movie = () => {
       },
     ],
   };
+  const containerStyle = {
+    position: 'relative',
+    backgroundImage: 'url(main_bg.jpg)',
+    backgroundSize: 'cover',
+    
+    height: '100vh',
+    width: '100%',
+    height: '100%',
+  };
 
+  const contentStyle = {
+    position: 'relative',
+    zIndex: 1,
+  };
+
+  const layerStyle = {
+    content: '',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#3f3f46',
+    opacity: 0.7,
+    zIndex: 0,
+  };
   
 
   return (
-    <div className='bg-zinc-700 text-red-400 pb-20 '>
+    <div style={containerStyle} className='bg-zinc-700 text-red-400 pb-20 '>
       {selectedMovie ? (
         
         
@@ -337,7 +362,7 @@ const Movie = () => {
           
         
         ) : (
-          <div className=''>
+          <div style={contentStyle} className=''>
 
         <div className='header-banner '>
            <div className='title pb-7 text-red-400'>
@@ -401,7 +426,7 @@ const Movie = () => {
 
       )}
       <br />
- 
+      <div style={layerStyle}></div>
     </div>
   );
 };

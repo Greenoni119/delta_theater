@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import { CgMenuLeftAlt} from "react-icons/cg"
 import {FaTimes} from "react-icons/fa"
+
 const Nav = () => {
     let Links =[
-      {name:"HOME",link:"/"},
-      {name:"All MOVIES",link:"/"},
-      {name:"CONTACT",link:"/"},
+      {
+        name:"HomePage",
+        link:"/"
+      },
+      {
+        name:"Contact",
+        link:"Contact"
+      },
     ];
     let [open,setOpen]=useState(false);
   return (
