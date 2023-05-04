@@ -10,9 +10,12 @@ const MovieTimes = ({ movie }) => {
     console.log(`Selected movie: ${movie.title}, time: ${time}`);
     setSelectedTime(time);
   };
-
+  const contentStyle = {
+    position: 'relative',
+    zIndex: 1,
+  };
   return (
-    <div >
+    <div style={contentStyle} className='h-screen' >
 
       <div className='p-3'>
       <h1 className='pb-4 text-3xl text-center text-teal-500'>{movie.title}</h1>

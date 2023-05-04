@@ -329,7 +329,7 @@ const Movie = () => {
     position: 'relative',
     backgroundImage: 'url(main_bg.jpg)',
     backgroundSize: 'cover',
-    
+    backgroundPosition:'',
     height: '100vh',
     width: '100%',
     height: '100%',
@@ -354,7 +354,7 @@ const Movie = () => {
   
 
   return (
-    <div style={containerStyle} className='bg-zinc-700 text-red-400 pb-20 '>
+    <div style={containerStyle} className='bg-zinc-700 text-red-400 pb-20 h-full'>
       {selectedMovie ? (
         
         
@@ -425,7 +425,6 @@ const Movie = () => {
         </div>
 
       )}
-      <br />
       <div style={layerStyle}></div>
     </div>
   );
