@@ -28,13 +28,13 @@ const SeatSelector = ({ title, time , image}) => {
   const checkoutLink = `/Checkout?title=${encodeURIComponent(title)}&time=${encodeURIComponent(time)}&seats=${encodeURIComponent(selectedSeats.map((s) => s.seat).join(','))}&totalPrice=${encodeURIComponent(totalPrice.toFixed(2))}&image=${encodeURIComponent(image)}`;
 
   return (
-    <div className='max-w-screen-sm mx-auto ml-3 mr-3'>
+    <div className='max-w-screen-sm ml-3 mr-3'>
 <div className="w-full bg-red-400 rounded-t-full mt-5 mb-2 p-0.5 max-w-screen-md mx-auto">
   </div>
   <h2 className="text-red-400 font-bold text-center">Screen</h2>
 
-
-<div className="flex justify-center m-2 mx-auto max-w-screen-sm min-w-screen-sm">
+<div className='text-center justify-center≠≠≠'>
+<div className=" justify-center m-2 max-w-screen-sm min-w-screen-sm">
 <div className="">
   
   <div className="">
@@ -78,7 +78,7 @@ const SeatSelector = ({ title, time , image}) => {
 </div>
 
       )}
-
+</div>
 
     </div>
   );
