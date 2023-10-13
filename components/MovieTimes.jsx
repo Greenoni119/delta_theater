@@ -18,7 +18,7 @@ const MovieTimes = ({ movie }) => {
     <div style={contentStyle} className='h-screen' >
 
       <div className='p-3'>
-      <h1 className='pb-4 text-3xl text-center text-teal-500'>{movie.title}</h1>
+      <h1 className='pb-4 text-3xl text-center text-amber-300'>{movie.title}</h1>
       
         <div className='flex clear-both'>
         
@@ -28,7 +28,7 @@ const MovieTimes = ({ movie }) => {
 <div className='ml-3'><Calander /></div>
       
         {movie.times.map((time, index) => (
-          <li className='hover:text-teal-400 pb-3 ml-5 text-gray-400 text-3xl pt-5' key={index}>
+          <li className='hover:text-amber-300 pb-3 ml-5 text-gray-400 text-3xl pt-5' key={index}>
             <Link href={`/seat?title=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(time)}&image=${encodeURIComponent(movie.image)}`}>
               <span onClick={() => handleTimeClick(time)}>{time}</span>
             </Link>
@@ -39,11 +39,11 @@ const MovieTimes = ({ movie }) => {
       <div className=' pt-3 text-sm text-gray-400 flex text-center justify-center'>
          <div className='pr-10'>
           <h1 className='text-2xl'>Duration</h1>
-          <p className='text-teal-400'> {movie.duration} </p>
+          <p className='text-amber-300'> {movie.duration} </p>
          </div>
          <div>
           <h1 className='text-2xl'>Rating</h1>
-          <p className='text-teal-400'> {movie.rating} </p>
+          <p className='text-amber-300'> {movie.rating} </p>
           </div>
         </div>
         <div className=' pt-3 text-sm'>

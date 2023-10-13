@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import MovieTimes from '../components/MovieTimes';
 import Image from 'next/image';
 import Slider from 'react-slick';
@@ -292,7 +291,7 @@ const Movie = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3,
     initialSlide: 0,
     
@@ -319,20 +318,20 @@ const Movie = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           dots:false,
         },
       },
     ],
   };
+
   const containerStyle = {
     position: 'relative',
-    backgroundImage: 'url(main_bg.jpg)',
     backgroundSize: 'cover',
-    backgroundPosition:'',
-    height: '100vh',
-    width: '100%',
+    background: '#2D2D2D',
+    backgroundPosition:'center',
     height: '100%',
+    
   };
 
   const contentStyle = {
@@ -340,21 +339,8 @@ const Movie = () => {
     zIndex: 1,
   };
 
-  const layerStyle = {
-    content: '',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#3f3f46',
-    opacity: 0.7,
-    zIndex: 0,
-  };
-  
-
   return (
-    <div style={containerStyle} className='bg-zinc-700 text-red-400 pb-20 h-full'>
+    <div style={containerStyle} className='bg-gray-900 text-white pb-10 '>
       {selectedMovie ? (
         
         
@@ -364,26 +350,20 @@ const Movie = () => {
         ) : (
           <div style={contentStyle} className=''>
 
-        <div className='header-banner '>
-           <div className='title pb-7 text-red-400'>
-            <Link href="/">
-              <h2 className='text-4xl'>Delta Theater</h2>
-              <h3 className='text-2xl'>Brentwood ca</h3>
-            </Link>
-           </div>
-        </div>
+        
         
         <Nav/>
 
-        <div className='pt-5'>
-            <h1 className='text-2xl'>Out Now</h1>
+        <h1 className='pt-10 text-center text-6xl'> OldFilms </h1>
+
+        <div className='pt-20'>
+            <h1 className='text-4xl p-6'>Out Now</h1>
         <ul className=''>
           <Slider {...settings}>
           {movies.slice(0,11).map((movie, index ) => (
             <li key={index} className='text-center'>
               <button onClick={() => handleMovieClick(movie)}>
-                
-              <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl' />
+              <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl' />
               </button>
             </li>
           ))}
@@ -391,15 +371,15 @@ const Movie = () => {
        </ul>
 </div>
 
-<div className='pt-10'>
-  <h1 className='text-2xl'>New Releases </h1>
+<div className='pt-20'>
+  <h1 className='text-4xl p-6'>New Releases </h1>
        <ul className=''>
   <Slider {...settings}>
   {movies.slice(12,18).map((movie, index ) => (
     <li key={index} className='text-center'>
       <button onClick={() => handleMovieClick(movie)}>
         
-      <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl' />
+      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl md:' />
       </button>
     </li>
   ))}
@@ -407,15 +387,15 @@ const Movie = () => {
 </ul>
 </div>
 
-<div className='pt-10'>
-  <h1 className='text-2xl'>Comming Soon </h1>
+<div className='pt-20 pb-20'>
+  <h1 className='text-4xl p-6'>Coming Soon </h1>
        <ul className=''>
   <Slider {...settings}>
   {movies.slice(19,33).map((movie, index ) => (
     <li key={index} className='text-center'>
       <button onClick={() => handleMovieClick(movie)}>
         
-      <Image src={movie.image} width={150} height={50} alt="image not working" className='rounded-xl'/>
+      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl'/>
       </button>
     </li>
   ))}
@@ -425,7 +405,7 @@ const Movie = () => {
         </div>
 
       )}
-      <div style={layerStyle}></div>
+      
     </div>
   );
 };
