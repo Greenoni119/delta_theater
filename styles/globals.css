@@ -13,6 +13,7 @@ body {
 @layer base {
   html {
     font-family: 'Yeseva One', serif;
+    background-color: #2D2D2D;
   }
 }
 
@@ -38,6 +39,32 @@ a {
  
   
 }
+
+
+/* Slideshow */
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+
 
 .slick-dots li.slick-active button:before{
   color:aqua

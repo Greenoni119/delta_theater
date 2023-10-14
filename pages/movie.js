@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Nav from '@/components/Nav';
-
+import Slideshow from '@/components/Slideshow';
 
 const movies = [
   {
@@ -294,6 +294,7 @@ const Movie = () => {
     slidesToShow: 4,
     slidesToScroll: 3,
     initialSlide: 0,
+    arrows:false,
     
     responsive: [
       {
@@ -339,8 +340,10 @@ const Movie = () => {
     zIndex: 1,
   };
 
+  
+
   return (
-    <div style={containerStyle} className='bg-gray-900 text-white pb-10 '>
+    <div style={containerStyle} className='bg-gray-900 text-white pb-10 max-w-screen-2xl mx-auto '>
       {selectedMovie ? (
         
         
@@ -355,6 +358,9 @@ const Movie = () => {
         <Nav/>
 
         <h1 className='pt-10 text-center text-6xl'> OldFilms </h1>
+
+      {/*<Slideshow/>*/}  
+
 
         <div className='pt-20'>
             <h1 className='text-4xl p-6'>Out Now</h1>
