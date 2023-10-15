@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import Slideshow from '@/components/Slideshow';
 
 const movies = [
@@ -343,7 +344,7 @@ const Movie = () => {
   
 
   return (
-    <div style={containerStyle} className='bg-gray-900 text-white pb-10 max-w-screen-2xl mx-auto '>
+    <div style={containerStyle} className='bg-gray-900 text-white max-w-screen-2xl mx-auto '>
       {selectedMovie ? (
         
         
@@ -369,7 +370,7 @@ const Movie = () => {
           {movies.slice(0,11).map((movie, index ) => (
             <li key={index} className='text-center'>
               <button onClick={() => handleMovieClick(movie)}>
-              <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl' />
+              <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl 2xl:w-80' />
               </button>
             </li>
           ))}
@@ -385,7 +386,7 @@ const Movie = () => {
     <li key={index} className='text-center'>
       <button onClick={() => handleMovieClick(movie)}>
         
-      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl md:' />
+      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl 2xl:w-80' />
       </button>
     </li>
   ))}
@@ -401,7 +402,7 @@ const Movie = () => {
     <li key={index} className='text-center'>
       <button onClick={() => handleMovieClick(movie)}>
         
-      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl'/>
+      <Image src={movie.image} width={190} height={90} alt="image not working" className='rounded-xl 2xl:w-80'/>
       </button>
     </li>
   ))}
@@ -411,7 +412,9 @@ const Movie = () => {
         </div>
 
       )}
-      
+
+      <Footer/>
+
     </div>
   );
 };

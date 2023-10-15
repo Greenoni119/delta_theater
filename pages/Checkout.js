@@ -3,7 +3,10 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Footer from 'components/Footer'
+
 const Checkout = () => {
+
   const router = useRouter();
   const { title, time, seats, image } = router.query;
 
@@ -11,17 +14,20 @@ const Checkout = () => {
   const pricePerSeat = 10.50;
   const tax = pricePerSeat * 1.07;
   const totalPrice = seatList.length * pricePerSeat + tax;
+
   const choutStyle = {
     background: '#2D2D2D',
   };
+
   return (
-    <div style={choutStyle} className='h-screen '>
+
+    <div style={choutStyle} className=''>
       <Head>
         <title>Checkout: {title}</title>
       </Head>
 
 
-      <div className=''>
+      <div className='pb-10'>
 
         <div className='pt-4'>
               <Image className='mx-auto shadow-xl rounded-2xl' src={image} width={200} height={350} alt="Movie Poster" />
@@ -50,8 +56,8 @@ const Checkout = () => {
 
     <div className='pt-5'>
           <form className='text-center'>
-          <input name="myInput" className='m-2 text-2xl bg-neutral-600 text-amber-300' placeholder='Name'/>
-          <input name="myInput" className='m-2 text-2xl bg-neutral-600 text-amber-300' placeholder='Phone Number'/>
+          <input name="myInput" className='m-2 text-2xl p-2  bg-neutral-600 text-amber-300' placeholder='Name'/>
+          <input name="myInput" className='m-2 text-2xl p-2 bg-neutral-600 text-amber-300' placeholder='Phone Number'/>
            
           </form>
     </div>
@@ -67,6 +73,8 @@ const Checkout = () => {
       </div>
 
       </div>
+      
+<Footer/>
       
     </div>
   );

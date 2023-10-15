@@ -4,6 +4,7 @@ import SeatSelector from '../components/SeatSelector';
 import Image from 'next/image';
 import Head from 'next/head';
 import Calander from '@/components/Calander';
+import Footer from '@/components/footer'
 const Seat = () => {
   const router = useRouter();
   const { title, time, image } = router.query;
@@ -13,7 +14,7 @@ const Seat = () => {
   };
   
   return (
-    <div style={seatStyle} className='bg-zinc-700 h-screen'>
+    <div style={seatStyle} className='bg-zinc-700'>
       <Head>
         <title>Seat Selection: {title}</title>
       </Head>
@@ -30,10 +31,15 @@ const Seat = () => {
     </div>
         
       </div>
-      
+
+<div className='mx-auto'>
+      <div className='mx-auto'>
       <SeatSelector title={title} time={time} image={image}/>
       <br />
-      
+      </div>
+</div>
+
+<Footer/>
     </div>
   );
 };
