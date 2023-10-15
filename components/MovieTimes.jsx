@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import SeatSelector from './SeatSelector';
 import Image from 'next/image';
-import Footer from './Footer'
+
 
 
 const MovieTimes = ({ movie }) => {
