@@ -4,7 +4,6 @@ import SeatSelector from './SeatSelector';
 import Image from 'next/image';
 
 
-
 const MovieTimes = ({ movie }) => {
   const [selectedTime, setSelectedTime] = useState(null);
 
