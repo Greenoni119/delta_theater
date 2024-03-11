@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react';
 //import MovieList from '../components/MovieList';
 import Movie from './movie';
-import Link from 'next/link';//use this for later use
+import Link from 'next/link';
 export default function Home() {
   return (
     <div className=''>

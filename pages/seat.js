@@ -18,28 +18,33 @@ const Seat = () => {
       <Head>
         <title>Seat Selection: {title}</title>
       </Head>
-      <div className='flex items-center justify-center gap-3 ml-4 mr-4'>
-      <Image src={image} width={100} height={50} alt="Movie Poster" className=' mt-3 rounded-xl' />
+      <div className='flex items-center justify-center gap-3 '>
+
+      <Image src={image} width={100} height={50} alt="Movie Poster" className=' mt-3 rounded-xl lg:w-40' />
     
-    <div className='text-3xl text-white'> 
+    <div className='text-3xl lg:text-5xl text-white'> 
         
-        <h2 className='ml-4'>{title}</h2>
+        <h2 className='ml-4 lg:text-5xl'>{title}</h2>
         
-        <h2 className='ml-4'> {time}</h2>
+        <h2 className='ml-4 lg:text-5xl'> {time}</h2>
 
         <Calander  />
     </div>
         
       </div>
 
-<div className='mx-auto'>
+
       <div className='mx-auto'>
       <SeatSelector title={title} time={time} image={image}/>
       <br />
       </div>
+
+
+<div className=' mx-auto w-full pt-60'>
+  <Footer/>
 </div>
 
-<Footer/>
+
     </div>
   );
 };

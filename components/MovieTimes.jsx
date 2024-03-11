@@ -50,6 +50,25 @@ const MovieTimes = ({ movie }) => {
           <p className='text-gray-400 lg:text-xl lg:leading-9 '>{movie.description}</p>
         </div>
 
+        <div className='pb-20'>
+  {/* <ul className='flex-wrap lg:flex lg:justify-center lg:p-5'>
+    {movie.castName.map((castName, index) => (
+      <li className='hover:text-amber-300 p-1 m-10 text-gray-400 text-3xl pt-5 cursor-pointer' key={index}>
+        <div className='w-60 h-60 lg:w-40 lg:h-40 mx-auto'>
+          <Image
+            className='rounded-3xl shadow-2xl w-full h-full'
+            src={movie.castPhoto[index]}
+            alt={castName}
+            width={190} height={190}
+          /><span className='flex flex-wrap'>{castName}</span>
+        </div>
+        
+      </li>
+    ))}
+  </ul> */}
+</div>
+
+
       </div>
 
       {selectedTime && <SeatSelector title={movie.title} time={selectedTime} />}
@@ -59,3 +78,6 @@ const MovieTimes = ({ movie }) => {
 };
 
 export default MovieTimes;
+
+
+

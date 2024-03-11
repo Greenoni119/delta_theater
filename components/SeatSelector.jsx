@@ -30,7 +30,7 @@ const SeatSelector = ({ title, time , image}) => {
   return (
     <div className="flex justify-center items-center">
     <div className='max-w-screen-sm ml-3 mr-3 mx-auto'>
-<div className="w-full bg-amber-300 rounded-t-full mt-5 mb-2 p-0.5 max-w-screen-md mx-auto">
+<div className="w-full bg-amber-300 rounded-t-full mt-5 mb-2 p-0.5 max-w-screen-lg mx-auto">
   </div>
   <h2 className="text-white font-bold text-center">Screen</h2>
 
@@ -44,7 +44,7 @@ const SeatSelector = ({ title, time , image}) => {
       <button
         key={`${row}-${col}`}
         onClick={() => handleSeatClick(`${String.fromCharCode(65 + row)}${col + 11}`)}
-        className={`seat h-3 w-4 rounded-t text-xs m-1 sm:h-6 sm:w-8 ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`) ? 'bg-amber-300' : 'bg-white'}`}
+        className={`seat h-3 w-4 rounded-t text-xs m-1 sm:h-8 sm:w-8 ${selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`) ? 'bg-amber-300' : 'bg-white'}`}
         disabled={selectedSeats.length >= 10 && !selectedSeats.some((s) => s.seat === `${String.fromCharCode(65 + row)}${col + 11}`)}
       >
       </button>
@@ -62,11 +62,11 @@ const SeatSelector = ({ title, time , image}) => {
 
           <div className='ml-3'>
             
-            <h1 className='text-white text-left text-2xl'>Seats:</h1>
-          <p className='text-amber-300 text-left text-sm'> {selectedSeats.map((s) => s.seat).join(', ')}</p>
+            <h1 className='text-white text-left text-2xl lg:text-3xl'>Seats:</h1>
+          <p className='text-amber-300 text-left text-sm lg:text-3xl'> {selectedSeats.map((s) => s.seat).join(', ')}</p>
           
-          <h1 className='text-white text-left text-2xl'>Price:</h1>
-          <p className='text-amber-300 text-left text-sm'> ${totalPrice.toFixed(2)}</p>
+          <h1 className='text-white text-left text-2xl lg:text-3xl'>Price:</h1>
+          <p className='text-amber-300 text-left text-sm lg:text-3xl'> ${totalPrice.toFixed(2)}</p>
 
           </div>
     

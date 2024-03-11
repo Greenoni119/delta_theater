@@ -75,7 +75,10 @@ const Checkout = () => {
 
       </div>
       
-<Footer/>
+<div className='absolute bottom-0 mx-auto w-full 100vh'>
+  <Footer/>
+</div>
+
       
     </div>
   );
